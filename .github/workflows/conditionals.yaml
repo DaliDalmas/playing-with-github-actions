@@ -7,8 +7,9 @@ jobs:
         steps:
             - name: "Hello world"
               run: echo "Hello world!"
+
     goodbye-moon:
         runs-on: ubuntu-latest
         steps:
             - name: "Goodby Moon"
-              run: echo "Goodbye Moon!"
+              run: echo github.repository
