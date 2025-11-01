@@ -12,4 +12,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: "Goodby Moon"
-              run: echo `github.repository`
+              run: echo "Repository name is ${GITHUB_REPOSITORY#*/}"
