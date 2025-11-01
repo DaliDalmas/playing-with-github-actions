@@ -11,5 +11,7 @@ jobs:
     goodbye-moon:
         runs-on: ubuntu-latest
         steps:
-            - name: "Goodby Moon"
+            - name: "Repo name"
               run: echo "Repository name is ${GITHUB_REPOSITORY#*/}"
+            - name: "Branch name"
+              run: echo "Repository name is ${GITHUB_REF#refs/heads/}"
