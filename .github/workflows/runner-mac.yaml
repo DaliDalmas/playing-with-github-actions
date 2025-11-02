@@ -1,0 +1,28 @@
+name: macOS workflow Example
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-test:
+        runs-on: macos-latest
+
+        steps:
+            - name: checkout code
+              uses: actions/checkout@v3
+
+            - name: create swift file
+              run: echo 'print("Hello from swift on macos")' > hello.swift
+
+            - name: Install dependencies
+              run: brew install swiftlint
+
+            - name: run swiftlint
+              run: swiftlint
+            
+            - name: compile and run swift program
+              run: |
+                swiftc hello.swift
+                ./hello
