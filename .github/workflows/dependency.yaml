@@ -1,0 +1,16 @@
+name: Workflow with jobs depending on each other
+
+on: ['push']
+
+jobs:
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+            - name: The second Job
+              run: echo 'Otieno'
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: The first job
+              run: echo 'Dalmas'
